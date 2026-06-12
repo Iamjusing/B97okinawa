@@ -187,6 +187,17 @@ body{font-family:'Noto Sans TC',sans-serif;background:var(--bg);color:var(--ink)
 .extra-input:focus{outline:none;border-color:var(--blue)}
 .opt.selected .extra-input{display:block}
 
+/* 景點照片卡片 */
+.photo-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.opt-photo{flex-direction:column;padding:0;overflow:hidden;align-items:stretch;gap:0}
+.opt-img{width:100%;aspect-ratio:16/10;object-fit:cover;display:block;transition:transform .35s ease}
+.opt-photo:hover .opt-img{transform:scale(1.04)}
+.opt-photo-body{display:flex;gap:10px;padding:10px 12px;align-items:flex-start}
+.opt-photo .opt-main{font-size:13.5px}
+.opt-photo .opt-sub{font-size:11px}
+.opt-photo.selected{border-color:var(--blue)}
+.opt-photo.selected .opt-photo-body{background:var(--blue-wash)}
+
 /* region divider */
 .region{
   font-family:var(--en);
@@ -573,54 +584,84 @@ body{font-family:'Noto Sans TC',sans-serif;background:var(--bg);color:var(--ink)
       <div class="q-desc">大型團體行動較慢，一天僅適合安排 1–2 個重點。選票幫助決定行程重心。</div>
 
       <div class="region">North｜北部・經典必訪</div>
-      <div class="opts">
-        <div class="opt" data-q="q6" data-v="美麗海水族館" onclick="checkbox(this)">
-          <div class="opt-box"></div>
-          <div><div class="opt-main">美麗海水族館</div><div class="opt-sub">黑潮大水槽、海豚秀，親子首選</div></div>
+      <div class="opts photo-grid">
+        <div class="opt opt-photo" data-q="q6" data-v="美麗海水族館" onclick="checkbox(this)">
+          <img class="opt-img" src="img/spot01.jpg" alt="美麗海水族館" loading="lazy">
+          <div class="opt-photo-body">
+            <div class="opt-box"></div>
+            <div><div class="opt-main">美麗海水族館</div><div class="opt-sub">黑潮大水槽、海豚秀，親子首選</div></div>
+          </div>
         </div>
-        <div class="opt" data-q="q6" data-v="名護鳳梨園／恐龍公園" onclick="checkbox(this)">
-          <div class="opt-box"></div>
-          <div><div class="opt-main">名護鳳梨園／恐龍公園</div><div class="opt-sub">自駕造型小車穿梭森林，小孩最愛</div></div>
+        <div class="opt opt-photo" data-q="q6" data-v="名護鳳梨園／恐龍公園" onclick="checkbox(this)">
+          <img class="opt-img" src="img/spot02.jpg" alt="名護鳳梨園／恐龍公園" loading="lazy">
+          <div class="opt-photo-body">
+            <div class="opt-box"></div>
+            <div><div class="opt-main">名護鳳梨園／恐龍公園</div><div class="opt-sub">自駕造型小車穿梭森林，小孩最愛</div></div>
+          </div>
         </div>
-        <div class="opt" data-q="q6" data-v="古宇利大橋" onclick="checkbox(this)">
-          <div class="opt-box"></div>
-          <div><div class="opt-main">古宇利大橋</div><div class="opt-sub">絕美跨海景觀與心形岩</div></div>
+        <div class="opt opt-photo" data-q="q6" data-v="古宇利大橋" onclick="checkbox(this)">
+          <img class="opt-img" src="img/spot03.jpg" alt="古宇利大橋" loading="lazy">
+          <div class="opt-photo-body">
+            <div class="opt-box"></div>
+            <div><div class="opt-main">古宇利大橋</div><div class="opt-sub">絕美跨海景觀與心形岩</div></div>
+          </div>
         </div>
       </div>
 
       <div class="region">Central｜中部・休閒社交</div>
-      <div class="opts">
-        <div class="opt" data-q="q6" data-v="萬座毛" onclick="checkbox(this)">
-          <div class="opt-box"></div>
-          <div><div class="opt-main">萬座毛</div><div class="opt-sub">象鼻岩經典場景，適合全班大合照</div></div>
+      <div class="opts photo-grid">
+        <div class="opt opt-photo" data-q="q6" data-v="萬座毛" onclick="checkbox(this)">
+          <img class="opt-img" src="img/spot04.jpg" alt="萬座毛" loading="lazy">
+          <div class="opt-photo-body">
+            <div class="opt-box"></div>
+            <div><div class="opt-main">萬座毛</div><div class="opt-sub">象鼻岩經典場景，適合全班大合照</div></div>
+          </div>
         </div>
-        <div class="opt" data-q="q6" data-v="美國村" onclick="checkbox(this)">
-          <div class="opt-box"></div>
-          <div><div class="opt-main">美國村</div><div class="opt-sub">夕陽、購物、異國美食</div></div>
+        <div class="opt opt-photo" data-q="q6" data-v="美國村" onclick="checkbox(this)">
+          <img class="opt-img" src="img/spot05.jpg" alt="美國村" loading="lazy">
+          <div class="opt-photo-body">
+            <div class="opt-box"></div>
+            <div><div class="opt-main">美國村</div><div class="opt-sub">夕陽、購物、異國美食</div></div>
+          </div>
         </div>
-        <div class="opt" data-q="q6" data-v="中城公園／浦添大公園" onclick="checkbox(this)">
-          <div class="opt-box"></div>
-          <div><div class="opt-main">中城公園／浦添大公園</div><div class="opt-sub">超長滾輪溜滑梯，小孩放電神點</div></div>
+        <div class="opt opt-photo" data-q="q6" data-v="中城公園／浦添大公園" onclick="checkbox(this)">
+          <img class="opt-img" src="img/spot06.jpg" alt="中城公園／浦添大公園" loading="lazy">
+          <div class="opt-photo-body">
+            <div class="opt-box"></div>
+            <div><div class="opt-main">中城公園／浦添大公園</div><div class="opt-sub">超長滾輪溜滑梯，小孩放電神點</div></div>
+          </div>
         </div>
       </div>
 
       <div class="region">South｜南部・文化購物</div>
-      <div class="opts">
-        <div class="opt" data-q="q6" data-v="玉泉洞／王國村" onclick="checkbox(this)">
-          <div class="opt-box"></div>
-          <div><div class="opt-main">玉泉洞／王國村</div><div class="opt-sub">壯觀鐘乳石洞與傳統大鼓秀</div></div>
+      <div class="opts photo-grid">
+        <div class="opt opt-photo" data-q="q6" data-v="玉泉洞／王國村" onclick="checkbox(this)">
+          <img class="opt-img" src="img/spot07.jpg" alt="玉泉洞／王國村" loading="lazy">
+          <div class="opt-photo-body">
+            <div class="opt-box"></div>
+            <div><div class="opt-main">玉泉洞／王國村</div><div class="opt-sub">壯觀鐘乳石洞與傳統大鼓秀</div></div>
+          </div>
         </div>
-        <div class="opt" data-q="q6" data-v="國際通" onclick="checkbox(this)">
-          <div class="opt-box"></div>
-          <div><div class="opt-main">國際通</div><div class="opt-sub">伴手禮、藥妝一條街</div></div>
+        <div class="opt opt-photo" data-q="q6" data-v="國際通" onclick="checkbox(this)">
+          <img class="opt-img" src="img/spot08.jpg" alt="國際通" loading="lazy">
+          <div class="opt-photo-body">
+            <div class="opt-box"></div>
+            <div><div class="opt-main">國際通</div><div class="opt-sub">伴手禮、藥妝一條街</div></div>
+          </div>
         </div>
-        <div class="opt" data-q="q6" data-v="瀨長島 Umikaji Terrace" onclick="checkbox(this)">
-          <div class="opt-box"></div>
-          <div><div class="opt-main">瀨長島 Umikaji Terrace</div><div class="opt-sub">看飛機起降與海景，下午茶首選</div></div>
+        <div class="opt opt-photo" data-q="q6" data-v="瀨長島 Umikaji Terrace" onclick="checkbox(this)">
+          <img class="opt-img" src="img/spot09.jpg" alt="瀨長島 Umikaji Terrace" loading="lazy">
+          <div class="opt-photo-body">
+            <div class="opt-box"></div>
+            <div><div class="opt-main">瀨長島 Umikaji Terrace</div><div class="opt-sub">看飛機起降與海景，下午茶首選</div></div>
+          </div>
         </div>
-        <div class="opt" data-q="q6" data-v="Outlet Ashibinaa" onclick="checkbox(this)">
-          <div class="opt-box"></div>
-          <div><div class="opt-main">Outlet Ashibinaa</div><div class="opt-sub">名牌大採買，最後一站必去</div></div>
+        <div class="opt opt-photo" data-q="q6" data-v="Outlet Ashibinaa" onclick="checkbox(this)">
+          <img class="opt-img" src="img/spot10.jpg" alt="Outlet Ashibinaa" loading="lazy">
+          <div class="opt-photo-body">
+            <div class="opt-box"></div>
+            <div><div class="opt-main">Outlet Ashibinaa</div><div class="opt-sub">名牌大採買，最後一站必去</div></div>
+          </div>
         </div>
       </div>
 
